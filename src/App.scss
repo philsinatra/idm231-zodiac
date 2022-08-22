@@ -1,0 +1,72 @@
+:root {
+  --red: #ef4444;
+  --orange: #f97316;
+  --yellow: #eab308;
+  --lime: #84cc16;
+  --green: #22c55e;
+  --teal: #14b8a6;
+  --cyan: #06b6d4;
+  --blue: #3b82f6;
+  --indigo: #6366f1;
+  --violet: #8b5cf6;
+  --purple: #a855f7;
+  --fuchsia: #d946ef;
+  --slate-500: #64748b;
+  --slate-50: #f8fafc;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  min-height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+aside {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--slate-50);
+  left: 0;
+  padding: 1.5rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  max-width: 872px;
+
+  button {
+    height: 200px;
+    width: 200px;
+  }
+
+  .details {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--slate-50);
+    grid-column: 1 / span 4;
+    padding: 1rem;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+  }
+}
