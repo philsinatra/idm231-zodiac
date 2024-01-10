@@ -1,14 +1,23 @@
 import './App.scss'
 
 import { Form, Sign } from 'components'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { zodiacData } from 'ts/data'
 
 function App() {
   const [currentSign, setCurrentSign] = useState('var(--slate-500)')
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   function setSign(color: string, sound: string): void {
-    new Audio(`/sounds/${sound}`).play()
+    // Stop currently playing audio
+    if (audioRef.current) {
+      audioRef.current.pause()
+      audioRef.current.currentTime = 0
+    }
+
+    const audio = new Audio(`/sounds/${sound}`)
+    audio.play()
+    audioRef.current = audio
     setCurrentSign(color)
   }
 

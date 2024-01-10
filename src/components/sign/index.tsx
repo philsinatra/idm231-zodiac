@@ -8,6 +8,7 @@ const Sign: FC<Zodiac> = ({ color, setSign, sound }) => {
   return (
     <button
       style={{
+        cursor: 'pointer',
         backgroundColor: buttonColor,
       }}
       onClick={() => setSign(buttonColor, sound)}
